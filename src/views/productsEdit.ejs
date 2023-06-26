@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title class="titulo">Editar Producto</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <figure>
+        <img src="/img/logo_sinfondo" alt="logo">
+      </figure>
+    <h1 class="titulo">Producto Editado:  <%= Producto.title %></h1>
+    <section class="formulario">
+        <form action="/productos/update/<%= Producto.id %>?_method=PUT" method="POST">
+            <label for="name">Nombre </label>
+            <p><input type="text" name="name" id="" value="<%= Producto.name %>" required></p>
+            <label for="description">Descripción </label>
+            <p><input type="text" name="description" id="" value="<%= Producto.description %>" required></p>
+            <label for="price">Precio </label>
+            <p><input type="number" name="price" id="" value="<%= Producto.price %>" required></p>
+            <label for="stock">Stock </label>
+            <p><input type="number" name="stock" id="" value="<%= Producto.stock %> required"></p
+            <p>
+                <select name="subcategoria_id" id="" required>
+                    <% allSubcategorias.forEach(subcategoria => { %>
+                    <option value="<%= subcategoria.id %>" <% if (Producto.subcategoria.id == subcategoria.id) { %><%= 'selected' %><% }; %>><%= subcategoria.title %></option>
+                    <% }); %>
+                </select>
+            </p>
+            
+            <br>
+            <p> <button class="botonAgregar" type="submit">Actualizar</button>
+        
+            <a  class="botonVolver" href="/productos">Listado de Servicios</a></p>
+        </form>
+    </section>
+</body>
+
+</html>

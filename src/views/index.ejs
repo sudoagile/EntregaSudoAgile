@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="/css/bootstrap.css"> <!--10 colocar rutas de imagens sin public de todos
+    las css e imagenes  -->
+
+    <script src="https://kit.fontawesome.com/997049d577.js" crossorigin="anonymous"></script>
+    <title><%= title %></title> <!--11 -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class = "top-header"> 
+          <div class = "logoybarra">
+          <img src="/img/logo_sinfondo.png" class="logo">
+         <!-- <div class="form" action="#" method="GET">-->
+         <!-- <div class="input">Buscar palabras claves<i class="fa fa-search"></i></div>-->
+            </i>
+
+          </div>
+
+         <!-- <h1><%= title %></h1> 12 -->
+         <!--<h1><p>Bienvenidos a <%= title %></p></h1>13 luego crear la carpeta roues y el archivo index.js--> 
+        
+          <h2>
+               <div class="cotice"> <i class="fa-solid fa-hand-holding-dollar"></i> Listado de
+                <a href="/productos"><%= title %></a></div>
+          </h2>
+          </div>
+      <nav>
+        <div class = "menu_servicios">
+          <div class= "items_menu_servicios" ><a href="#">Redes</a></div>
+          <div class= "items_menu_servicios" ><a href="#">Hardware</a></div>
+          <div class= "items_menu_servicios" ><a href="#">Desarrollo de Software</a></div>
+          <div class= "items_menu_servicios" ><a href="#">Consultoria de TI</a></div>
+          <div class= "items_menu_servicios" ><a href="#">Gestor web</a></div>
+        </div>
+      
+       </nav>
+  
+  <a href="#" class="hamburguer-button">
+      <i class="fa-solid fa-bars"></i>
+  </a>
+
+</header>
+
+<section>
+  <img src="/img/banner.jpeg" alt="Banner de ofertas" class="logobanner" >
+</section>
+
+<main>
+  <section>
+        <hr>
+      <h3>Nuestros Productos y Servicios</h3>
+      <div class = "listado">
+          <article>
+            
+             <img src="/img/redes.jpeg" class="img-circle img-responsive img-raised">
+             <h4>Redes</h4>
+              <div class="main-article">
+                <p class="descuento"><a href="#">LAN</a></p>
+                <p class="descuento"><a href="#">WLAN</a></p>
+                <i class="fas fa-truck"></i>
+                <p>&nbsp;&nbsp</p>
+                
+              </div>
+              
+          </article>
+
+          <article>
+            
+            <img src="/img/hardware.jpeg" class="img-circle img-responsive img-raised">
+            <h4>Hardware</h4> 
+            <div class="main-article">
+                <p class="descuento"><a href="#">Desktop</a></p>
+               <p class="descuento"><a href="#">Laptops</a></p>
+               <p class="descuento"><a href="#">Servidores</a></p>
+               <i class="fas fa-truck"></i>
+               <p>&nbsp;&nbsp</p>
+             
+             </div>
+            
+         </article>
+
+         <article>
+            
+            <img src="/img/sofware.jpeg" class="img-circle img-responsive img-raised">
+            <h4>Desarrollo de Sofware</h4> 
+            <div class="main-article">
+                <p class="descuento"><a href="#">Desktop</a></p>
+               <p class="descuento"><a href="#">Páginas Web</a></p>
+               <p class="descuento"><a href="#">Apps</a></p>
+               <i class="fas fa-truck"></i>
+               <p>&nbsp;&nbsp</p>
+             
+             </div>
+            
+         </article>
+
+         <article>
+            
+            <img src="/img/consultoria.jpeg" class="img-circle img-responsive img-raised">
+            <h4>Consultoría de TI</h4> 
+            <div class="main-article">
+                <p class="descuento"><a href="#">De Software</a></p>
+               <p class="descuento"><a href="#">De Transformación Digital</a></p>
+               <p class="descuento"><a href="#">De Procesos</a></p>
+               <i class="fas fa-truck"></i>
+             
+             
+             </div>
+            
+         </article>
+      </div>
+  </section>
+
+  <section>
+      <h3 Ofertas class= "ofertas">Oferta de Cursos</h3>
+      <div class = "listado">
+          <article>
+            <h4>Scrum</h4>
+            <img src="/img/scrum.jpeg" class="img-circle img-responsive img-raised">
+              <div class="main-article">
+                  <p class="precio">S/ 480.00</p>
+                  <p class="descuento">40% off</p>
+                  <i class="fas fa-truck"></i>
+                  <p>&nbsp;&nbsp</p>
+                  <h4>Con el curso online Metodologías ágiles: SCRUM de Sudo Agile, conocera los conceptos de agilidad, framework Scrum y los best practices asociados a diversos proyectos</h4>
+                
+              </div>
+          </article>
+
+          <article>
+            <h4>Kanban</h4>
+            <img src="/img/kanban.png" class="img-circle img-responsive img-raised">
+              <div class="main-article">
+                  <p class="precio">S/ 450.00</p>
+                  <p class="descuento">40% off</p>
+                  <i class="fas fa-truck"></i>
+                  <p>&nbsp;&nbsp</p>
+                  <h4>Desarrolla habilidades y gestiona proyectos con enfoques ágiles usando el método Kanban. Entrega productos y servicios de valor en forma ágil aplicando el método Kanban</h4>
+                
+              </div>
+          </article>
+
+          <article>
+            <h4>Azure</h4>
+            <img src="/img/azure.jpeg" class="img-circle img-responsive img-raised">
+              <div class="main-article">
+                  <p class="precio">S/ 520.00</p>
+                  <p class="descuento">40% off</p>
+                  <i class="fas fa-truck"></i>
+                  <p>&nbsp;&nbsp</p>
+                  <h4>Este curso enseña a los profesionales de TI cómo administrar sus suscripciones de Azure, crear y escalar máquinas virtuales, implementar soluciones de almacenamiento y configurar redes virtuales</h4>
+                
+              </div>
+          </article>
+
+          <article>
+            <h4>AWS</h4>
+            <img src="/img/aws.png" class="img-circle img-responsive img-raised">
+              <div class="main-article">
+                  <p class="precio">S/ 520.00</p>
+                  <p class="descuento">40% off</p>
+                  <i class="fas fa-truck"></i>
+                  <p>&nbsp;&nbsp</p>
+                  <h4>Este curso virtual proporcionará una introducción a la nube de AWS y los métodos disponibles para interactuar con varios servicios de AWS</h4>
+                
+              </div>
+          </article>
+      </div>  
+  </section>
+</main>
+
+
+<footer>
+  <div class = "cajasfooter">
+  <section>
+  <div><i class="fa fa-whatsapp fa-2xl" aria-hidden="true"></i></div>
+  <h4>Conversemos</h4>
+  <p>Atendemos tus dudas, consultas, solicitudes y sugrencias</p>
+  </section>
+  <section>
+  
+  <div><i class="fa fa-facebook-official fa-2xl" aria-hidden="true"></i></i></div>
+  <h4>Estamos tambien en facebook</h4>
+  <p>Porque sabemos que a muchos de nuestros clientes les gusta facebook estamos también ahí presente</p>
+      </section>
+      <section>
+  <div><i class="fa fa-book fa-user-shield fa-2xl" aria-hidden="true"></i></i></div>
+  <h4>Libro de Reclamaciones</h4>
+  <p>Si tienes halgo que reclamar, puedes hacerlo desde nuestro Libro de Reclamaciones Online</p>
+  </section>
+  
+
+      </div>
+      <h5>Copyright © 2021-2023 Sudo Agile </h5>
+</footer>
+</body>
+</html>
+
+
+
+
+  

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= movie.title %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo_sinfondo" alt="Pelicula">
+    </figure>
+    <h1><%= producto.name %> </h1>    
+    <br>
+    <p>NOMBRE: <%= producto.name %> </p>
+    <p>DESCRIPCIÓN: <%= producto.description %> </p>
+    <p>PRECIO: <%= producto.price + ' min'%> </p>
+    <p>STOCK: <%= producto.stock %> </p>
+    <br>
+    <section>
+        <a class="botonModificar" href="/productos/edit/<%= producto.id %>">Modificar</a>
+        <a class="botonBorrar" href="/productos/delete/<%= producto.id %>">Borrar</a>
+        <a class="botonVolver" href="/productos">Listado de Productos y Servicios</a>
+    </section>
+
+</body>
+</html>

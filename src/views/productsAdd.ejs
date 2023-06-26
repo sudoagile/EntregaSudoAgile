@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Producto add</title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo_sinfondo" alt="Logo">
+    </figure>
+
+    <h1 class="titulo">Agregar Producto o Servicio</h1>
+    <br>
+
+    <section>
+        <form action="/products/create" method="POST">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="" required>
+
+            <label for="description">Descripción</label>
+            <input type="number" name="description" id="" required>
+
+            <label for="price">Precio</label>
+            <input type="number" name="precio" id="" required>
+
+            <label for="stock">Stock</label>
+            <input type="number" name="stock" id="" required>
+
+        
+            
+            <select name="subcategoria_id"  id="" required>
+                <option value="" disable selected > Seleccione Subcategoria</option>
+                <% allSubcategorias.forEach(Subcategoria => { %>
+                <option value="<%= subcategoria.id %>"> <%= subcategoria.title %></option>
+
+              <%  }) %>
+            </select>
+            <br>
+
+            <p>><button class="botonAgregar" type="submit">Agregar</button></p><br>
+
+            <a class="botonVolver" href="/productos">Listado de Productos y Servicios</a>
+
+        </form>
+    </section>
+
+</body>
+</html>
