@@ -16,11 +16,11 @@ app.listen("3001", () => console.log("Servidor corriendo en el puerto 3001"));
 const indexRouter = require("./routes/index")
 app.use("/", indexRouter);
 
-/* const productosRoutes = require('./routes/productsRoutes')
- app.use(prodcutosRoutes)
+const productosRoutes = require('./routes/productsRoutes')
+app.use(productosRoutes)
 
-const rutaApiMovies = require("./routes/api/productos")
-app.use("/api/productosApi", rutaApiProductos) */
+// const rutaApiMovies = require("./routes/api/productos")
+// app.use("/api/productosApi", rutaApiProductos)
 
 
 

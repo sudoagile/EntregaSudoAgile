@@ -6,25 +6,23 @@ const moment = require('moment');
 
 
 
-const Productos = db.Producto;
-const Subcategorias = db.Subcategoria;
-;
+const Productos = db.Product;
+const Subcategorias = db.Subcategory;
+
 
 
 const productsController = {
     'list': (req, res) => {
-        db.Producto.findAll({
-            include: ['subcategoria']
+        Productos.findAll()
+        .then(productos => {
+            res.render('productsList.ejs', {productos})
         })
-            .then(productos => {
-                res.render('productsList.ejs', {productos})
-            })
     },
 
     'detail': (req, res) => {
-        db.Producto.findByPk(req.params.id,
+        Productos.findByPk(req.params.id,
             {
-                include : ['subcategoria']
+                // include : ['subcategoria']
             })
             .then(producto => {
                 res.render('productsDetail.ejs', {producto});
@@ -77,6 +75,7 @@ edit: function(req,res) {
     let productoId = req.params.id;
     let promProductos = Productos.findByPk(productoId,{include: ['subcategoria']});
     let promSubcategorias = Subcategorias.findAll();
+
     Promise
     .all([promProductos, promSubcategorias])
     .then(([Producto, allSubcategorias]) => {

@@ -11,7 +11,7 @@
 
 <body>
     <figure>
-        <img src="/img/logo_sinfondo" alt="Logo">
+        <img src=".../public/img/logo_sinfondo.png" class="logo">
     </figure>
     <h1>LISTADO DE SERVICIOS Y/O PRODUCTOS</h1>
     <br>
@@ -22,9 +22,9 @@
     </p>
     <br>
     <ul>
-        <% for( let i = 0; i < products.length; i++ ) { %>
+        <% for( let i = 0; i < productos.length; i++ ) { %>
         <li>
-            <a href="/productos/detail/<%= productos[i].id %>"><%= productos[i].title %></a>
+            <a href="/products/detail/<%= productos[i].id %>"><%= productos[i].name %></a>
         </li>
         <% } %>
 

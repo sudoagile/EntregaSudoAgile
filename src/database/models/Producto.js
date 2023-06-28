@@ -1,7 +1,7 @@
 const { text } = require("express");
 
 module.exports = (sequelize, dataTypes) =>{
-    let alias = "Productos";
+    let alias = "Product";
     let cols = {
 
     id: {
@@ -11,49 +11,51 @@ module.exports = (sequelize, dataTypes) =>{
     autoIncrement: true
     },
     name: {
-    type: dataTypes.VARCHAR(191),
+    type: dataTypes.STRING(191),
     allowNull: false
     },
     description:{
-    type: dataTypes.VARCHAR(191),
+    type: dataTypes.STRING(191),
     allowNull: false    
     },
     long_description:{
-    type: dataTypes.text,
+    type: dataTypes.STRING(500),
     allowNull: true
     },
     price: {
-    type: dataTypes.price(23,2),
+    type: dataTypes.DECIMAL(23,2),
     allowNull: true
     },
-    active:{
-      type: dataTypes.Boolean,
+    is_active:{
+      type: dataTypes.BOOLEAN,
       allowNull: false    
     },
     created_at:{
-    type: dataTypes.DATEONLY,
-    allowNull: false
+      type: 'TIMESTAMP',
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+      allowNull: false
     },
     updated_at: {
-      type: dataTypes.timestamps,
+      type: 'TIMESTAMP',
+      defaultValue: sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
       allowNull: true
     },
-    subcategoria_id: {
-      type: dataTypes.BIGINT(11).UNSIGNED,
-      foreignKey: true,
-      allowNull: false,
-      autoIncrement: false,
-    },
+    // subcategoria_id: {
+    //   type: dataTypes.BIGINT(11).UNSIGNED,
+    //   foreignKey: true,
+    //   allowNull: false,
+    //   autoIncrement: false,
+    // },
     order: {
       type: dataTypes.BIGINT(11).UNSIGNED,
       allowNull: true,
     },
     specs: {
-      type: dataTypes.long_description,
+      type: dataTypes.STRING(500),
       allowNull: true,
     },
     specs_imagen:{
-      type: dataTypes.VARCHAR(255),
+      type: dataTypes.STRING(255),
       allowNull: true,
     },
     view_price:{
@@ -65,11 +67,11 @@ module.exports = (sequelize, dataTypes) =>{
     allowNull: true
     },
     descuento: {
-      type: dataTypes.price(23,2),
+      type: dataTypes.DECIMAL(23,2),
       allowNull: true
     },
     discount_img: {
-      type: dataTypes.VARCHAR(255),
+      type: dataTypes.STRING(255),
       allowNull: true
     },
     new_product: {
@@ -92,6 +94,7 @@ module.exports = (sequelize, dataTypes) =>{
       type: dataTypes.DATEONLY,
       allowNull: true
     },
+    subcategories_id: dataTypes.BIGINT(10)
 
   };
 
@@ -103,12 +106,12 @@ module.exports = (sequelize, dataTypes) =>{
       }
     const Productos = sequelize.define(alias, cols, config);
 
-    Productos.associate = function(models){
-      Productos.belongsTo(models.Subcategoria, {
-          as: "Subcategoria",
-          foreignKey: "subcategories_id"
-      })
-    }
+    // Productos.associate = function(models){
+    //   Productos.belongsTo(models.Subcategoria, {
+    //       as: "subcategory",
+    //       foreignKey: "subcategories_id"
+    //   })
+    // }
      return Productos
   };
 

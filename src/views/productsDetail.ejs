@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= movie.title %> </title>
+    <title><%= producto.name %> </title>
     <link rel='stylesheet' href='/css/style.css' />
 
 </head>
@@ -19,9 +19,9 @@
     <p>STOCK: <%= producto.stock %> </p>
     <br>
     <section>
-        <a class="botonModificar" href="/productos/edit/<%= producto.id %>">Modificar</a>
-        <a class="botonBorrar" href="/productos/delete/<%= producto.id %>">Borrar</a>
-        <a class="botonVolver" href="/productos">Listado de Productos y Servicios</a>
+        <a class="botonModificar" href="/products/edit/<%= producto.id %>">Modificar</a>
+        <a class="botonBorrar" href="/products/delete/<%= producto.id %>">Borrar</a>
+        <a class="botonVolver" href="/products">Listado de Productos y Servicios</a>
     </section>
 
 </body>

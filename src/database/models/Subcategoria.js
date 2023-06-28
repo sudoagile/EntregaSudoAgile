@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) =>{
-    let alias = "Subcategoria";
+    let alias = "Subcategory";
     let cols = {
 
     id: {
@@ -9,29 +9,31 @@ module.exports = (sequelize, dataTypes) =>{
     autoIncrement: true
     },
     name: {
-    type: dataTypes.VARCHAR(255),
+    type: dataTypes.STRING(255),
     allowNull: true
     },
     description:{
-      type: dataTypes.VARCHAR(191),
+      type: dataTypes.STRING(191),
       allowNull: false    
     },
     active:{
-    type: dataTypes.Boolean,
+    type: dataTypes.BOOLEAN,
     allowNull: false    
     },
     image: {
-    type: dataTypes.VARCHAR(255),
+    type: dataTypes.STRING(255),
     allowNull: true
     },
-    created_at: {
-    type: dataTypes.DATEONLY,
-    allowNull: true
-    },
-    updated_at: {
-    type: dataTypes.timestamps,
-    allowNull: true
-    },
+    // created_at: {
+    //   type: 'TIMESTAMP',
+    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP'),
+    //   allowNull: true
+    // },
+    // updated_at: {
+    //   type: 'TIMESTAMP',
+    //   defaultValue: sequelize.literal('CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP'),
+    //   allowNull: true
+    // },
     category_id: {
     type: dataTypes.BIGINT(11).UNSIGNED,
     foreignKey: true,
@@ -44,19 +46,19 @@ module.exports = (sequelize, dataTypes) =>{
 
   };
 
-    let config = {
-        timestamps: true,
-        createdAt: "created_at",
-        updatedAt: "updated_at",
-        deletedAt: false
-      }
-    const Subcategorias = sequelize.define(alias, cols, config);
-
-    Subcategorias.associate = function(models){
-      Subcategorias.hasMany(models.Producto, {
-          as: "products",
-          foreignKey: "subcategories_id"
-      })
+  let config = {
+      timestamps: true,
+      createdAt: "created_at",
+      updatedAt: "updated_at",
+      deletedAt: false
     }
-     return Subcategorias
+    const Subcategoria = sequelize.define(alias, cols, config);
+
+    // Subcategoria.associate = function(models){
+    //   Subcategoria.hasMany(models.Producto, {
+    //       as: "products",
+    //       foreignKey: "subcategories_id"
+    //   })
+    // }
+     return Subcategoria
   };
