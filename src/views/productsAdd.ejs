@@ -10,7 +10,7 @@
 </head>
 <body>
     <figure>
-        <img src="/img/logo_sinfondo" alt="Logo">
+        <img src="/img/logo_sinfondo.png" class="logo">
     </figure>
 
     <h1 class="titulo">Agregar Producto o Servicio</h1>
@@ -32,10 +32,10 @@
 
         
             
-            <select name="subcategoria_id"  id="" required>
+            <select name="subcategories_id"  id="" required>
                 <option value="" disable selected > Seleccione Subcategoria</option>
                 <% allSubcategorias.forEach(Subcategoria => { %>
-                <option value="<%= subcategoria.id %>"> <%= subcategoria.title %></option>
+                <option value="<%= Subcategoria.id %>"> <%= Subcategoria.name %></option>
 
               <%  }) %>
             </select>
